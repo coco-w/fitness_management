@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:fitness_management/Icon.dart';
+import 'package:fitness_management/actionLibary/index.dart';
 import 'package:fitness_management/home.dart';
 import 'package:fitness_management/subject.dart';
 import 'package:flutter/material.dart';
@@ -26,9 +27,14 @@ class _IndexState extends State<IndexPage> {
       icon: Icon(CustomIcon.subject),
       label: '项目',
     ),
+    const BottomNavigationBarItem(
+      backgroundColor: Colors.blue,
+      icon: Icon(CustomIcon.action),
+      label: '动作库',
+    ),
   ];
   int currentIndex = 0;
-  final pages = [const HomePage(), const SubjectPage()];
+  final pages = [const HomePage(), const SubjectPage(), const ActionLibary()];
   @override
   void initState() {
     super.initState();
