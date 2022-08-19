@@ -1,6 +1,6 @@
 # fitness_management
 
-A new Flutter project.
+这是一个健身管理app。
 
 ## Getting Started
 
