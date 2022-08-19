@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:fitness_management/Icon.dart';
 import 'package:fitness_management/home.dart';
 import 'package:fitness_management/subject.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class _IndexState extends State<IndexPage> {
     ),
     const BottomNavigationBarItem(
       backgroundColor: Colors.blue,
-      icon: Icon(Icons.subject),
+      icon: Icon(CustomIcon.subject),
       label: '项目',
     ),
   ];
