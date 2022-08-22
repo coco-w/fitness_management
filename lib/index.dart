@@ -45,7 +45,7 @@ class _IndexState extends State<IndexPage> {
   Widget build(BuildContext build) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('底部导航栏'),
+        title: Text(bottomNavItems[currentIndex].label as String),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: bottomNavItems,

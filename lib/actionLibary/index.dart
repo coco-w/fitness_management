@@ -12,37 +12,36 @@ class ActionLibary extends StatefulWidget {
 class _ActionLibary extends State<ActionLibary> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: double.infinity,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              // wrap your Column in Expanded
-              flex: 18,
-              child: Column(
-                children: <Widget>[
-                  TextField(
-                    decoration: InputDecoration(
-                      // border: OutlineInputBorder(),
-                      hintText: '搜索动作库',
-                    ),
-                  ),
-                ],
+    return SizedBox(
+      width: double.infinity,
+      height: double.infinity,
+      child: Stack(children: [
+        Positioned(
+            right: 10,
+            bottom: 20,
+            child: CircleAvatar(
+              radius: 24,
+              backgroundColor: Colors.blue,
+              child: IconButton(
+                icon: Icon(Icons.add),
+                onPressed: onPressed,
+                iconSize: 24,
               ),
-            ),
-            Expanded(
-              flex: 6,
-              // wrap your Column in Expanded
-              child: Column(
-                children: <Widget>[
-                  ElevatedButton(onPressed: onPressed, child: Text('添加动作'))
-                ],
+            )),
+        Positioned(
+            right: 10,
+            bottom: 80,
+            child: CircleAvatar(
+              radius: 24,
+              backgroundColor: Colors.blue,
+              child: IconButton(
+                icon: Icon(Icons.search),
+                onPressed: onPressed,
+                iconSize: 24,
               ),
-            ),
-          ],
-        ));
+            )),
+      ]),
+    );
   }
 
   void onPressed() {}
