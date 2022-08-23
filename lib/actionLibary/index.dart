@@ -10,39 +10,46 @@ class ActionLibary extends StatefulWidget {
 }
 
 class _ActionLibary extends State<ActionLibary> {
+  FocusNode _searchFocus = FocusNode();
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       height: double.infinity,
       child: Stack(children: [
+        Container(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          height: 60.0,
+          child: TextField(
+            focusNode: FocusNode(),
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: '动作名称',
+            ),
+            onTap: _handleSearch,
+          ),
+        ),
         Positioned(
             right: 10,
-            bottom: 20,
-            child: CircleAvatar(
-              radius: 24,
-              backgroundColor: Colors.blue,
-              child: IconButton(
-                icon: Icon(Icons.add),
-                onPressed: onPressed,
-                iconSize: 24,
-              ),
-            )),
-        Positioned(
-            right: 10,
-            bottom: 80,
-            child: CircleAvatar(
-              radius: 24,
-              backgroundColor: Colors.blue,
-              child: IconButton(
-                icon: Icon(Icons.search),
-                onPressed: onPressed,
-                iconSize: 24,
-              ),
-            )),
+            bottom: 18,
+            child: FloatingActionButton(
+                onPressed: onPressed, child: Icon(Icons.add))),
       ]),
     );
   }
 
-  void onPressed() {}
+  void onPressed() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            child: Text('hello'),
+            height: double.infinity,
+          );
+        });
+  }
+
+  void _handleSearch() {
+    _searchFocus.unfocus();
+  }
 }
